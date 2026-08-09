@@ -82,22 +82,7 @@ const gracefulShutdown = (signal) => {
 
 // ========== CHECK CHANNELS FUNCTION ==========
 const checkUserJoinedChannels = async (userId) => {
-  const channels = ['@bappimd786', '@labiboffical1'];
-  let allJoined = true;
-
-  for (const channel of channels) {
-    try {
-      const member = await bot.getChatMember(channel, userId);
-      if (['left', 'kicked'].includes(member.status)) {
-        allJoined = false;
-        break;
-      }
-    } catch {
-      allJoined = false;
-      break;
-    }
-  }
-  return allJoined;
+  return true;
 };
 
 // ========== SEND CHANNELS REQUIRED MESSAGE ==========
@@ -181,11 +166,7 @@ bot.onText(/\/pair(?:\s+(.+))?/, async (msg, match) => {
   }
 
   // 🔥 PRIVATE CHAT MEIN NORMAL PAIRING PROCESS
-  const allJoined = await checkUserJoinedChannels(userId);
-  
-  if (!allJoined) {
-    return sendChannelsRequiredMessage(chatId);
-  }
+  // Removed channel join requirement
 
   if (!text) {
     userStates.set(userId, { step: 'awaiting_number' });
@@ -318,24 +299,7 @@ bot.on('message', async (msg) => {
   
   userStates.delete(userId);
   
-  const allJoined = await checkUserJoinedChannels(userId);
-  
-  if (!allJoined) {
-    return bot.sendMessage(chatId,
-      `🚨 *You must join our official channels before pairing.*`,
-      {
-        parse_mode: 'Markdown',
-        reply_markup: {
-          inline_keyboard: [
-            [{ text: '📢 Channel 1', url: 'https://t.me/bappimd876' }],
-            [{ text: '📢 Channel 2', url: 'https://t.me/labiboffical1' }],
-            [{ text: '👥 Group', url: 'https://whatsapp.com/channel/0029VbCvM3e05MUfSYFVA73f' }],
-            [{ text: '✅ I have joined', callback_data: 'check_join' }]
-          ]
-        }
-      }
-    );
-  }
+  // Removed channel join requirement
 
   if (/[a-z]/i.test(text)) {
     return bot.sendMessage(chatId, '❌ Letters are not allowed. Send only numbers.');

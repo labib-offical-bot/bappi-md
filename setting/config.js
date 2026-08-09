@@ -22,14 +22,14 @@ global.premmess = "☠️ 𖤐 𝐑𝐄𝐒𝐓𝐑𝐈𝐂𝐓𝐄𝐃 𝐅𝐄
 global.dev = "8801877316871"
 global.creatorName = "☠︎︎ 𓆩𝐋𝐚𝐛𝐢𝐛 𝑶𝒇𝒇𝒊𝒄𝒊𝒂𝒍𓆪 ☠︎︎'"
 global.footer = "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎" //footer section
-global.link = "https://whatsapp.com/channel/0029VbCvM3e05MUfSYFVA73f"
+global.link = ""
 global.autobio = true//auto update bio
 global.botName = "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎"
 global.version = "V2"
 global.botname = "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎"
 global.author = "𝐋𝐚𝐛𝐢𝐛 𝐨𝐟𝐟𝐢𝐜𝐚𝐥︎"
 global.themeemoji = '🤞'
-global.wagc = 'https://whatsapp.com/channel/0029VbCvM3e05MUfSYFVA73f'
+global.wagc = ""
 global.thumbnail = 'https://i.postimg.cc/prLDv9rD/IMG-20260801-WA0114.jpg'
 global.richpp = 'https://i.postimg.cc/prLDv9rD/IMG-20260801-WA0114.jpg'
 global.packname = "𝐒𝐓𝐈𝐂𝐊𝐄𝐑𝐒 𖣘♔︎"
@@ -84,7 +84,7 @@ global.database = `\`[ 👑 ] ☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ  ☠︎︎ 😙 
 
 🔥 𝖂𝖆: wa.me/8801775850715
 🕷️ 𝖙𝖌: t.me/s@labibvaiya01
-💀 𝖜𝖆 𝖈𝖍𝖆𝖓𝖓𝖊𝖑: https://whatsapp.com/channel/0029VbCvM3e05MUfSYFVA73f
+💀 𝖜𝖆 𝖈𝖍𝖆𝖓𝖓𝖊𝖑: (Removed)
 
 𝕋𝕙𝕒𝕟𝕜𝕤 𝕗𝕠𝕣 𝕌𝕤𝕚𝕟𝕘  ☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ  ☠︎︎`
 

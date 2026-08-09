@@ -1860,11 +1860,6 @@ case 'menu2': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎𝐁ᴀᴩᴩɪ xᴍᴅ☠︎︎",
-        serverMessageId: -1
-      }
     }
   }, { quoted: m })
 
@@ -1935,11 +1930,6 @@ case 'listmenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-      }
     }
   }, { quoted: m })
 
@@ -2001,11 +1991,6 @@ case 'mymenu': {
     contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
-        forwardedNewsletterMessageInfo: {
-            newsletterJid: NEWSLETTER_JID,
-            newsletterName: "☠ 𝐁ᴀᴩᴩɪ xᴍᴅ☠",
-            serverMessageId: -1
-        }
     }
 }, { quoted: m })
 
@@ -2079,11 +2064,6 @@ case 'groupmenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2136,11 +2116,6 @@ case 'downloadmenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "to☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ☠︎︎",
-        serverMessageId: -1
-        }
     }
     }, { quoted: m })
 
@@ -2216,11 +2191,6 @@ case 'funmenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2263,11 +2233,6 @@ case 'gamemenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2356,11 +2321,6 @@ case 'animemenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2408,11 +2368,6 @@ case 'stickermenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2507,11 +2462,6 @@ case 'utilitymenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎𝐁ᴀᴩᴩɪ xᴍᴅ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2550,11 +2500,6 @@ case 'voicemenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2642,11 +2587,6 @@ case 'imagemenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2685,11 +2625,6 @@ case 'emojimenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2780,11 +2715,6 @@ case 'logomenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2832,11 +2762,6 @@ case 'aimenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎ 𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-              }
     }
     }, { quoted: m })
 
@@ -2883,11 +2808,6 @@ case 'miscmenu': {
     contextInfo: {
       forwardingScore: 999,
       isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: NEWSLETTER_JID,
-        newsletterName: "☠︎︎𝐁ᴀᴩᴩɪ xᴍᴅ ☠︎︎",
-        serverMessageId: -1
-      }
     }
   }, { quoted: m })
 }
@@ -3270,11 +3190,6 @@ case 'broadcast': {
   const contextInfo = {
     forwardingScore: 999,
     isForwarded: true,
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: NEWSLETTER_JID,
-      newsletterName: "☠︎︎ 𝑺𝒉𝒂𝒅𝒐𝒘 𝑴𝑫 ☠︎︎",
-      serverMessageId: -1
-    }
   }
 
   const bcText = `╭─〔 ʙʀᴏᴀᴅᴄᴀsᴛ ʙʏ ᴏᴡɴᴇʀ 〕\n│ ${text.split('\n').join('\n│ ')}\n╰─⸻⸻⸻⸻`
@@ -12519,9 +12434,7 @@ case 'repo': {
 ╰━━━━━━━━━━━━━━━╯
 
 ◆ 🤖 TELEGRAM BOTS ◆
-➥ t.me/Bappixmd1_bot
-➥ t.me/Bappixmd1_bot
-➥ t.me/Bappixmd1_bot
+	➥ (Removed)
 
 ◆ 🔗 DIRECT PAIR ◆
 ➥ .pair 88017******
