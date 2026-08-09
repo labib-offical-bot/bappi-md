@@ -3109,9 +3109,11 @@ case 'welcome': {
     
     if (args[0].toLowerCase() === 'on') {
         setSetting(m.chat, "welcome", true);
+        global.welcomeGroups.add(m.chat);
         m.reply('✅ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇssᴀɢᴇs ᴇɴᴀʙʟᴇᴅ!')
     } else if (args[0].toLowerCase() === 'off') {
         setSetting(m.chat, "welcome", false);
+        global.welcomeGroups.delete(m.chat);
         m.reply('❌ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇssᴀɢᴇs ᴅɪsᴀʙʟᴇᴅ!')
     } else {
         reply('ᴜsᴀɢᴇ: ᴡᴇʟᴄᴏᴍᴇ ᴏɴ/ᴏғғ')
@@ -3126,9 +3128,11 @@ case 'goodbye': {
     
     if (args[0].toLowerCase() === 'on') {
         setSetting(m.chat, "goodbye", true);
+        global.goodbyeGroups.add(m.chat);
         m.reply('✅ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇs ᴇɴᴀʙʟᴇᴅ!')
     } else if (args[0].toLowerCase() === 'off') {
         setSetting(m.chat, "goodbye", false);
+        global.goodbyeGroups.delete(m.chat);
         m.reply('❌ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇs ᴅɪsᴀʙʟᴇᴅ!')
     } else {
         reply('ᴜsᴀɢᴇ: ɢᴏᴏᴅʙʏᴇ ᴏɴ/ᴏғғ')
@@ -10791,12 +10795,12 @@ ${m.isGroup ? `*ɢʀᴏᴜᴘ ɪɴғᴏ:*
 • ɢʀᴏᴜᴘ: ${groupName}
 • ᴜsᴇʀ ɪs ᴀᴅᴍɪɴ: ${isAdmins ? '✅' : '❌'}
 • ʙᴏᴛ ɪs ᴀᴅᴍɪɴ: ${isBotAdmins ? '✅' : '❌'}
-• ᴀɴᴛɪʟɪɴᴋ: ${antilinkGroups.has(from) ? '✅' : '❌'}
-• ᴡᴇʟᴄᴏᴍᴇ: ${welcomeGroups.has(from) ? '✅' : '❌'}
-• ɢᴏᴏᴅʙʏᴇ: ${goodbyeGroups.has(from) ? '✅' : '❌'}
-• ᴀɴᴛɪᴅᴇʟᴇᴛᴇ: ${global.antiDelete?.has(from) ? '✅' : '❌'}
-• ᴄʜᴀᴛʙᴏᴛ: ${global.chatbot?.has(from) ? '✅' : '❌'}
-• ᴀɴᴛɪʙᴏᴛ: ${global.antibot?.has(from) ? '✅' : '❌'}` : '*ɴᴏᴛ ɪɴ ɢʀᴏᴜᴘ*'}
+	• ᴀɴᴛɪʟɪɴᴋ: ${getSetting(from, "antilink", false) ? '✅' : '❌'}
+	• ᴡᴇʟᴄᴏᴍᴇ: ${getSetting(from, "welcome", true) ? '✅' : '❌'}
+	• ɢᴏᴏᴅʙʏᴇ: ${getSetting(from, "goodbye", true) ? '✅' : '❌'}
+	• ᴀɴᴛɪᴅᴇʟᴇᴛᴇ: ${getSetting(from, "antidelete", false) ? '✅' : '❌'}
+	• ᴄʜᴀᴛʙᴏᴛ: ${getSetting(from, "chatbot", false) ? '✅' : '❌'}
+	• ᴀɴᴛɪʙᴏᴛ: ${getSetting(from, "antibot", false) ? '✅' : '❌'}` : '*ɴᴏᴛ ɪɴ ɢʀᴏᴜᴘ*'}
 `
   
   reply(debugInfo)
@@ -12867,7 +12871,8 @@ if (antilink && /(https?:\/\/|www\.|chat\.whatsapp\.com)/i.test(body)) {
 
 // ==================== SETUP EVENT LISTENERS ====================
 module.exports.setupEventListeners = function(bad, store) {
-    bad.ev.on('group-participants.update', async (update) => {
+            bad.ev.on('group-participants.update', async (update) => {
+        console.log(`📥 Group Update: ${update.id} - Action: ${update.action}`);
         try {
             const { id, participants, action } = update;
             
@@ -12877,14 +12882,13 @@ module.exports.setupEventListeners = function(bad, store) {
             for (let participant of participants) {
                 if (action === 'add') {
                     if (getSetting(id, "welcome", true)) {
+                        console.log(`👋 Sending welcome message to ${id}`);
                         try {
                             const metadata = await bad.groupMetadata(id);
                             const membersCount = metadata.participants.length;
                             const randomWelcome = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
                             
-                            await bad.sendMessage(id, {
-                                image: { url: welcomeImage },
-                                caption: `*╭━━〔 👋 ᴡᴇʟᴄᴏᴍᴇ 〕━━┈⊷*
+                            const welcomeCaption = `*╭━━〔 👋 ᴡᴇʟᴄᴏᴍᴇ 〕━━┈⊷*
 ┃
 ┃ 🎉 @${participant.split('@')[0]} ᴊᴜsᴛ ᴊᴏɪɴᴇᴅ!
 ┃
@@ -12893,9 +12897,21 @@ module.exports.setupEventListeners = function(bad, store) {
 ┃
 ┃ 📢 ᴍᴇssᴀɢᴇ: ${randomWelcome}
 ┃
-*╰━━━━━━━━━━━━━━━┈⊷*`,
-                                mentions: [participant]
-                            });
+*╰━━━━━━━━━━━━━━━┈⊷*`;
+
+                            try {
+                                await bad.sendMessage(id, {
+                                    image: { url: welcomeImage },
+                                    caption: welcomeCaption,
+                                    mentions: [participant]
+                                });
+                            } catch (imgErr) {
+                                console.log(`⚠️ Welcome image failed, sending text only: ${imgErr.message}`);
+                                await bad.sendMessage(id, {
+                                    text: welcomeCaption,
+                                    mentions: [participant]
+                                });
+                            }
                         } catch (error) {
                             console.error('❌ Welcome error:', error);
                         }

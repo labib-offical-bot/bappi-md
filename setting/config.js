@@ -1,10 +1,9 @@
 const fs = require('fs')
 
-global.owner = "8801877316871" //owner number
+global.owner = ["8801877316871"] //owner number
 global.footer = "𝐁𝐀𝐏𝐏𝐈 " //footer section
 global.status = false //"self/public" section of the bot
 global.prefa = ['','!','.','#','&','/','@']
-global.owner = ['234']
 global.xprefix = '.'
 global.gambar = "https://i.postimg.cc/NMn8rzqh/image1.png"
 global.OWNER_NAME = "@@labibvaiya01" //

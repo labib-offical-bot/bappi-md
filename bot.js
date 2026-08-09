@@ -160,12 +160,7 @@ bot.onText(/\/pair(?:\s+(.+))?/, async (msg, match) => {
   const isGroup = msg.chat.type === 'group' || msg.chat.type === 'supergroup';
   const text = match[1]?.trim();
 
-  // 🔥 GROUP MEIN /pair LIKHA TO SAME STYLISH MESSAGE (JAISE START MEIN HAI)
-  if (isGroup) {
-    return sendGroupMessage(chatId, msg.message_id);
-  }
-
-  // 🔥 PRIVATE CHAT MEIN NORMAL PAIRING PROCESS
+  // 🔥 PAIRING PROCESS (Now allowed in groups)
   // Removed channel join requirement
 
   if (!text) {
@@ -287,7 +282,7 @@ bot.on('message', async (msg) => {
   const userId = msg.from.id;
   const text = msg.text;
   
-  if (msg.chat.type !== 'private') return;
+  // Allowed in groups for pairing flow
   if (!text) return;
   if (text.startsWith('/')) return;
   
